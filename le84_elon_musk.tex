@@ -1,0 +1,110 @@
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{lmodern}
+\usepackage{color}
+\usepackage{fix-cm}
+\usepackage{textpos}
+\usepackage{eurosym}
+\usepackage{multirow}
+\usepackage{perpage}
+
+% Redéfinis les marges des tableaux
+\let\oldtabular=\tabular
+\def\tabular{\small\oldtabular}
+\renewcommand{\arraystretch}{1.5}
+
+\usetheme{Warsaw}
+\usecolortheme{orchid}
+
+% Permet de réinitialiser les footnote à chaque frame. Nécéssite 2 compilations.
+\MakePerPage{footnote}
+
+\setlength{\TPHorizModule}{0.01\textwidth}
+\setlength{\TPVertModule}{0.01\textheight}
+
+\setbeamertemplate{navigation symbols}{}
+
+\title[Elon Musk's strategies to not die on earth]{
+    How Elon Musk, with his strategies, wants to bring our civilization to the
+    next level?
+}
+\author[HOUDAYER \and KIM \and RUHIER]{
+	Benoit HOUDAYER\\
+    \and
+    Pauline KIM\\
+    \and
+	Anthony RUHIER
+}
+\institute[LE84 - UTBM]{
+    Business english (LE84) - Université Technologique de Belfort Montbéliard}
+\date{January 2016}
+
+\begin{document}
+
+% Permet de masquer le comptage de slides
+\bgroup
+\makeatletter
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}
+%    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}}%
+}
+\makeatother
+
+\begin{frame}[noframenumbering]
+ 	\frametitle{}
+	\titlepage
+\end{frame}
+\egroup
+
+\begin{frame}[noframenumbering,plain]
+    I want Iron Man to punch the Hulk here!
+	% \begin{textblock}{0}(5,-5)
+    %     \center{\includegraphics[width=.7\paperwidth]{images/logo-fsf.eps}}
+	% \end{textblock}
+\end{frame}
+
+\logo{\includegraphics[height=1cm]{images/logo-utbm.eps}\hspace*{2em}}
+
+
+% Ajout du compteur de slides
+\expandafter\def\expandafter\insertshorttitle\expandafter{%
+      \insertshorttitle\hfill%
+      \insertframenumber\,/\,\inserttotalframenumber}
+
+\begin{frame}
+	\begin{small}
+	\frametitle{Sommaire}
+	\tableofcontents
+	\end{small}
+\end{frame}
+
+\AtBeginSection[]
+{
+	\begin{small}
+	\begin{frame}
+		\frametitle{Sommaire}
+		\tableofcontents[currentsection]
+	\end{frame}
+	\end{small}
+}
+
+
+%%%% Includes des sections :
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\include{sections/convictions}
+\include{sections/ford_strategy}
+
+\end{document}
